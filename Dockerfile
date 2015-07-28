@@ -22,7 +22,7 @@ RUN apt-get update && apt-get upgrade -y \
     && docker-php-ext-install gd
 
 # Get Shaarli and install it
-RUN mkdir -p --mode=777 /var/local/backup/shaarli \
+RUN mkdir -p --mode=777 /var/backup/shaarli \
     && mkdir -p --mode=777 /usr/src/shaarli \
     && curl -o shaarli.tgz -SL https://github.com/shaarli/Shaarli/archive/$SHAARLI_VERSION.tar.gz \
     && tar -xzf shaarli.tgz --strip-components=1 -C /usr/src/shaarli \
@@ -47,7 +47,7 @@ COPY ./nginx/conf/sites-enabled/default.conf /etc/nginx/sites-enabled/default.co
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 
 # Volume for shaarli backup
-VOLUME /var/local/backup/shaarli
+VOLUME /var/backup/shaarli
 
 # grr, ENTRYPOINT resets CMD now
 ENTRYPOINT ["/docker-entrypoint.sh"]
