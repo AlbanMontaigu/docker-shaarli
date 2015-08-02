@@ -13,7 +13,7 @@ FROM amontaigu/nginx-php
 MAINTAINER alban.montaigu@gmail.com
 
 # Shaarli env variables
-ENV SHAARLI_VERSION="v0.0.45beta"
+ENV SHAARLI_VERSION="v0.5.0"
 
 # System update & install the PHP extensions we need
 RUN apt-get update && apt-get upgrade -y \
@@ -34,7 +34,6 @@ RUN mkdir -p --mode=777 /var/backup/shaarli \
         --exclude=README.md \
         --exclude=composer.json \
         --exclude=phpunit.xml \
-        --exclude=shaarli_version.php \
         --exclude=tests \
         --exclude=doc \
     && rm shaarli.tgz \
