@@ -31,7 +31,7 @@ RUN mkdir -p --mode=777 /var/backup/shaarli \
         --exclude=tests \
         --exclude=doc \
     && rm shaarli.tgz \
-    && chown -R nginx:nginx /usr/src/shaarli
+    && chown -Rfv nginx:nginx /usr/src/shaarli
 
 # NGINX tuning for SHAARLI
 COPY ./nginx/conf/sites-enabled/default.conf /etc/nginx/sites-enabled/default.conf
