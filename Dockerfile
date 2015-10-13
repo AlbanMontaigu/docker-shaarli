@@ -13,7 +13,7 @@ FROM amontaigu/nginx-php
 MAINTAINER alban.montaigu@gmail.com
 
 # Shaarli env variables
-ENV SHAARLI_VERSION="v0.5.0"
+ENV SHAARLI_VERSION="v0.5.4"
 
 # System update & install the PHP extensions we need
 RUN apt-get update && apt-get upgrade -y \
