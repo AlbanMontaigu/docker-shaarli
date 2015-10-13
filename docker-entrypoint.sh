@@ -2,7 +2,7 @@
 set -e
 
 # Backup the prev install in case of fail...
-tar -zcf /var/backup/shaarli/shaarli-v$(date '+%y%m%d%H%M%S').tar.gz /var/www
+tar -zcf /var/backup/shaarli/shaarli-v$(date '+%Y%m%d%H%M%S').tar.gz /var/www
 
 # Since shaarli can be upgraded by overwriting files do the upgrade !
 # @TODO use VERSION file to check if necessary
