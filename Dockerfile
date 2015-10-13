@@ -7,19 +7,13 @@
 # ================================================================================================================
 
 # Base is a nginx install with php
-FROM amontaigu/nginx-php
+FROM amontaigu/nginx-php-plus:5.6.14
 
 # Maintainer
 MAINTAINER alban.montaigu@gmail.com
 
 # Shaarli env variables
 ENV SHAARLI_VERSION="v0.5.4"
-
-# System update & install the PHP extensions we need
-RUN apt-get update && apt-get upgrade -y \
-    && apt-get install -y libpng12-dev libjpeg-dev && rm -rf /var/lib/apt/lists/* \
-    && docker-php-ext-configure gd --with-png-dir=/usr --with-jpeg-dir=/usr \
-    && docker-php-ext-install gd
 
 # Get Shaarli and install it
 RUN mkdir -p --mode=777 /var/backup/shaarli \
