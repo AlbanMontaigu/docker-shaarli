@@ -7,13 +7,13 @@
 # ================================================================================================================
 
 # Base is a nginx install with php
-FROM amontaigu/nginx-php-plus:5.6.15
+FROM amontaigu/nginx-php-plus:5.6.16
 
 # Maintainer
 MAINTAINER alban.montaigu@gmail.com
 
 # Shaarli env variables
-ENV SHAARLI_VERSION="v0.6.0"
+ENV SHAARLI_VERSION="v0.6.1"
 
 # Get Shaarli and install it
 RUN mkdir -p --mode=777 /var/backup/shaarli \
