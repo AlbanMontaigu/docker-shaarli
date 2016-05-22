@@ -13,7 +13,7 @@ FROM amontaigu/nginx-php-plus:5.6.21
 MAINTAINER alban.montaigu@gmail.com
 
 # Shaarli env variables
-ENV SHAARLI_VERSION="v0.6.2"
+ENV SHAARLI_VERSION="v0.7.0"
 
 # Get Shaarli and install it
 RUN mkdir -p --mode=777 /var/backup/shaarli \
