@@ -18,19 +18,13 @@ ENV SHAARLI_VERSION="v0.8.0"
 # Get Shaarli and install it
 RUN mkdir -p --mode=777 /var/backup/shaarli \
     && mkdir -p --mode=777 /usr/src/shaarli \
-    && curl -o shaarli.tgz -SL https://github.com/shaarli/Shaarli/archive/$SHAARLI_VERSION.tar.gz \
-    && tar -xzf shaarli.tgz --strip-components=1 -C /usr/src/shaarli \
-        --exclude=.gitignore \
-        --exclude=.travis.yml \
+    && curl -o shaarli.tar -SL https://github.com/shaarli/Shaarli/releases/download/$SHAARLI_VERSION/shaarli-$SHAARLI_VERSION-full.tar \
+    && tar -xf shaarli.tar -C /usr/src/shaarli \
         --exclude=CONTRIBUTING.md \
         --exclude=COPYING \
-        --exclude=Makefile \
-        --exclude=README.md \
-        --exclude=composer.json \
-        --exclude=phpunit.xml \
-        --exclude=tests \
         --exclude=doc \
-    && rm shaarli.tgz \
+        --exclude=README.md \
+    && rm shaarli.tar \
     && chown -Rfv nginx:nginx /usr/src/shaarli
 
 # NGINX tuning for SHAARLI
