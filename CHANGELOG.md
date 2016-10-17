@@ -1,4 +1,7 @@
 
+## 0.8.0 (2016-10-17)
+- Update to amontaigu/nginx-php-plus:5.6.27
+
 ## 0.8.0 (2016-10-16)
 - Update to shaarli 0.8.0
 - Update to amontaigu/nginx-php-plus:5.6.26
